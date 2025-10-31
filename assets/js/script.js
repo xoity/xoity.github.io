@@ -325,7 +325,7 @@ const servicesData = {
   'pentesting': {
     title: 'Penetration Testing',
     icon: 'shield-checkmark-outline',
-    why: 'My proficiency in penetration testing stems from extensive hands-on experience conducting security assessments across diverse environments. Through my roles at Kalvad DMCC, Tunisia Level UP, and MMB IT, I\'ve performed hundreds of penetration tests on web applications, mobile apps, networks, and cloud infrastructure. This practical experience, combined with formal certifications and continuous learning, has developed my ability to think like an attacker while maintaining an ethical mindset. I understand not just how to find vulnerabilities, but why they exist and how to effectively communicate risks to both technical and non-technical stakeholders.',
+    why: 'Through extensive hands-on experience at Kalvad DMCC, Tunisia Level UP, and MMB IT, I\'ve conducted hundreds of penetration tests across web applications, mobile apps, networks, and cloud infrastructure. I understand not just how to find vulnerabilities, but how to effectively communicate risks to stakeholders.',
     experience: [
       'Conducted 100+ penetration tests across web, mobile, and network infrastructure',
       'Performed security assessments for financial, healthcare, and government sectors',
@@ -349,7 +349,7 @@ const servicesData = {
   'vulnassessment': {
     title: 'Vulnerability Assessment',
     icon: 'bug-outline',
-    why: 'My expertise in vulnerability assessment has been honed through systematic experience identifying, analyzing, and prioritizing security weaknesses across complex IT environments. Working with industry-leading tools like Nessus, Qualys, and custom scanning solutions, I\'ve developed a keen eye for distinguishing between false positives and genuine threats. My approach goes beyond automated scanning—I understand the business context of vulnerabilities, can correlate findings across multiple systems, and provide actionable remediation guidance. This skill set was particularly valuable during my time at Kalvad DMCC and Tunisia Level UP, where I managed large-scale vulnerability assessment programs.',
+    why: 'Working with industry-leading tools like Nessus, Qualys, and custom scanning solutions, I\'ve developed expertise in identifying and prioritizing security weaknesses across complex IT environments. My approach goes beyond automated scanning—I understand business context, correlate findings across systems, and provide actionable remediation guidance.',
     experience: [
       'Managed vulnerability assessment programs for enterprise environments with 500+ assets',
       'Performed regular vulnerability scans and coordinated remediation efforts',
@@ -373,7 +373,7 @@ const servicesData = {
   'securedev': {
     title: 'Secure Development',
     icon: 'code-slash-outline',
-    why: 'My secure development proficiency comes from a unique combination of software engineering skills and deep security knowledge. As Co-Founder and CTO of LunaStudy, I led the development of secure applications from the ground up, implementing security controls at every stage of the SDLC. My experience spans multiple languages (Python, Java, JavaScript) and frameworks, always with a security-first mindset. I understand that security isn\'t a feature to be added later—it must be baked into the architecture and design. This philosophy has enabled me to build applications that are both functional and resilient against modern attack vectors.',
+    why: 'As Co-Founder and CTO of LunaStudy, I led secure application development from the ground up, implementing security controls at every stage of the SDLC. My experience spans Python, Java, and JavaScript, always with a security-first mindset. I believe security must be baked into architecture and design, not added as an afterthought.',
     experience: [
       'Led secure development initiatives as CTO for a startup company',
       'Implemented secure coding practices across Python, Java, and JavaScript projects',
@@ -397,7 +397,7 @@ const servicesData = {
   'securityauto': {
     title: 'Security Automation',
     icon: 'terminal-outline',
-    why: 'My proficiency in security automation stems from recognizing that manual security processes don\'t scale in modern environments. Through building tools like InfraNinja, HMvuln, and AuditAgent, I\'ve automated everything from infrastructure deployment to vulnerability scanning to compliance auditing. My programming skills in Python, combined with deep security knowledge, enable me to create sophisticated automation solutions that save time, reduce human error, and provide consistent results. This expertise has been particularly valuable in DevSecOps roles, where I\'ve integrated security controls into CI/CD pipelines and automated incident response workflows.',
+    why: 'Through building tools like InfraNinja, HMvuln, and AuditAgent, I\'ve automated everything from infrastructure deployment to vulnerability scanning to compliance auditing. My Python skills combined with security knowledge enable me to create solutions that save time, reduce human error, and provide consistent results across DevSecOps environments.',
     experience: [
       'Developed multiple open-source security automation tools (InfraNinja, HMvuln, AuditAgent)',
       'Automated security testing in CI/CD pipelines using Jenkins and GitLab CI',
