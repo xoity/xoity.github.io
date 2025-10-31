@@ -314,3 +314,168 @@ document.addEventListener('keydown', function(e) {
     closeModal();
   }
 });
+
+
+/*-----------------------------------*\
+  #SERVICE MODAL
+\*-----------------------------------*/
+
+// Service data with detailed proficiency explanations
+const servicesData = {
+  'pentesting': {
+    title: 'Penetration Testing',
+    icon: 'shield-checkmark-outline',
+    why: 'My proficiency in penetration testing stems from extensive hands-on experience conducting security assessments across diverse environments. Through my roles at Kalvad DMCC, Tunisia Level UP, and MMB IT, I\'ve performed hundreds of penetration tests on web applications, mobile apps, networks, and cloud infrastructure. This practical experience, combined with formal certifications and continuous learning, has developed my ability to think like an attacker while maintaining an ethical mindset. I understand not just how to find vulnerabilities, but why they exist and how to effectively communicate risks to both technical and non-technical stakeholders.',
+    experience: [
+      'Conducted 100+ penetration tests across web, mobile, and network infrastructure',
+      'Performed security assessments for financial, healthcare, and government sectors',
+      'Specialized in OWASP Top 10 vulnerabilities and advanced exploitation techniques',
+      'Experience with both black-box and white-box testing methodologies',
+      'Developed custom exploits and proof-of-concepts for critical vulnerabilities',
+      'Created comprehensive penetration testing reports with remediation priorities'
+    ],
+    tools: ['Burp Suite Pro', 'Metasploit', 'Nmap', 'Wireshark', 'Sqlmap', 'OWASP ZAP', 'Kali Linux', 'BloodHound'],
+    competencies: [
+      'Web application penetration testing (OWASP Top 10)',
+      'Network infrastructure security assessment',
+      'Mobile application security testing (Android/iOS)',
+      'API security testing and authentication bypass',
+      'Social engineering and phishing campaigns',
+      'Wireless network security assessment',
+      'Active Directory and privilege escalation',
+      'Security report writing and risk assessment'
+    ]
+  },
+  'vulnassessment': {
+    title: 'Vulnerability Assessment',
+    icon: 'bug-outline',
+    why: 'My expertise in vulnerability assessment has been honed through systematic experience identifying, analyzing, and prioritizing security weaknesses across complex IT environments. Working with industry-leading tools like Nessus, Qualys, and custom scanning solutions, I\'ve developed a keen eye for distinguishing between false positives and genuine threats. My approach goes beyond automated scanning—I understand the business context of vulnerabilities, can correlate findings across multiple systems, and provide actionable remediation guidance. This skill set was particularly valuable during my time at Kalvad DMCC and Tunisia Level UP, where I managed large-scale vulnerability assessment programs.',
+    experience: [
+      'Managed vulnerability assessment programs for enterprise environments with 500+ assets',
+      'Performed regular vulnerability scans and coordinated remediation efforts',
+      'Analyzed and triaged thousands of vulnerabilities based on risk and business impact',
+      'Developed vulnerability management workflows and SLA tracking systems',
+      'Created executive-level vulnerability reports and security dashboards',
+      'Conducted patch management assessment and compliance verification'
+    ],
+    tools: ['Nessus Professional', 'Qualys', 'OpenVAS', 'Rapid7 Nexpose', 'Splunk', 'ELK Stack', 'Nmap NSE', 'Shodan'],
+    competencies: [
+      'Automated vulnerability scanning and management',
+      'Risk assessment and CVSS scoring',
+      'False positive analysis and validation',
+      'Vulnerability correlation and pattern recognition',
+      'Compliance scanning (PCI-DSS, HIPAA, ISO 27001)',
+      'Patch management prioritization',
+      'Trend analysis and security metrics',
+      'Remediation tracking and verification'
+    ]
+  },
+  'securedev': {
+    title: 'Secure Development',
+    icon: 'code-slash-outline',
+    why: 'My secure development proficiency comes from a unique combination of software engineering skills and deep security knowledge. As Co-Founder and CTO of LunaStudy, I led the development of secure applications from the ground up, implementing security controls at every stage of the SDLC. My experience spans multiple languages (Python, Java, JavaScript) and frameworks, always with a security-first mindset. I understand that security isn\'t a feature to be added later—it must be baked into the architecture and design. This philosophy has enabled me to build applications that are both functional and resilient against modern attack vectors.',
+    experience: [
+      'Led secure development initiatives as CTO for a startup company',
+      'Implemented secure coding practices across Python, Java, and JavaScript projects',
+      'Designed and built security-focused applications and automation tools',
+      'Conducted secure code reviews and implemented SAST/DAST in CI/CD pipelines',
+      'Developed security libraries and frameworks for common vulnerabilities',
+      'Mentored development teams on secure coding best practices'
+    ],
+    tools: ['Python', 'Java', 'Node.js', 'Django', 'Spring Boot', 'Docker', 'Git', 'SonarQube'],
+    competencies: [
+      'Secure Software Development Lifecycle (SSDLC)',
+      'Input validation and output encoding',
+      'Authentication and authorization implementation',
+      'Cryptography and key management',
+      'API security design and implementation',
+      'Container security and Docker best practices',
+      'Database security and SQL injection prevention',
+      'Security testing integration (SAST/DAST)'
+    ]
+  },
+  'securityauto': {
+    title: 'Security Automation',
+    icon: 'terminal-outline',
+    why: 'My proficiency in security automation stems from recognizing that manual security processes don\'t scale in modern environments. Through building tools like InfraNinja, HMvuln, and AuditAgent, I\'ve automated everything from infrastructure deployment to vulnerability scanning to compliance auditing. My programming skills in Python, combined with deep security knowledge, enable me to create sophisticated automation solutions that save time, reduce human error, and provide consistent results. This expertise has been particularly valuable in DevSecOps roles, where I\'ve integrated security controls into CI/CD pipelines and automated incident response workflows.',
+    experience: [
+      'Developed multiple open-source security automation tools (InfraNinja, HMvuln, AuditAgent)',
+      'Automated security testing in CI/CD pipelines using Jenkins and GitLab CI',
+      'Created custom scripts for log analysis, threat hunting, and incident response',
+      'Built automated security monitoring and alerting systems',
+      'Implemented Infrastructure as Code with security hardening',
+      'Developed security orchestration workflows for SOC operations'
+    ],
+    tools: ['Python', 'Bash', 'PowerShell', 'Ansible', 'Terraform', 'Jenkins', 'GitHub Actions', 'AWS Lambda'],
+    competencies: [
+      'Security tool development and scripting',
+      'CI/CD security integration',
+      'Infrastructure as Code (IaC) security',
+      'Log analysis and SIEM automation',
+      'API integration and security orchestration',
+      'Automated vulnerability scanning and reporting',
+      'Incident response automation',
+      'Cloud security automation (AWS, Azure, GCP)'
+    ]
+  }
+};
+
+// Service modal functionality
+const serviceModalContainer = document.querySelector('[data-service-modal-container]');
+const serviceModalOverlay = document.querySelector('[data-service-modal-overlay]');
+const serviceModalCloseBtn = document.querySelector('[data-service-modal-close-btn]');
+const serviceLearnMoreBtns = document.querySelectorAll('.service-learn-more');
+
+// Function to open service modal
+function openServiceModal(serviceId) {
+  const service = servicesData[serviceId];
+  if (!service) return;
+
+  // Update modal content
+  document.querySelector('[data-service-modal-title]').textContent = service.title;
+  document.querySelector('[data-service-modal-icon] ion-icon').setAttribute('name', service.icon);
+  document.querySelector('[data-service-modal-why]').textContent = service.why;
+  
+  // Update experience list
+  const experienceList = document.querySelector('[data-service-modal-experience]');
+  experienceList.innerHTML = service.experience.map(exp => `<li>${exp}</li>`).join('');
+  
+  // Update tools list
+  const toolsList = document.querySelector('[data-service-modal-tools]');
+  toolsList.innerHTML = service.tools.map(tool => `<li>${tool}</li>`).join('');
+  
+  // Update competencies list
+  const competenciesList = document.querySelector('[data-service-modal-competencies]');
+  competenciesList.innerHTML = service.competencies.map(comp => `<li>${comp}</li>`).join('');
+  
+  // Show modal
+  serviceModalContainer.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+// Function to close service modal
+function closeServiceModal() {
+  serviceModalContainer.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Add click event to all service learn more buttons
+serviceLearnMoreBtns.forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const serviceId = this.dataset.serviceId;
+    openServiceModal(serviceId);
+  });
+});
+
+// Close service modal events
+serviceModalCloseBtn.addEventListener('click', closeServiceModal);
+serviceModalOverlay.addEventListener('click', closeServiceModal);
+
+// Close service modal on ESC key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && serviceModalContainer.classList.contains('active')) {
+    closeServiceModal();
+  }
+});
+
