@@ -145,9 +145,17 @@ input, textarea {
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
-html { font-family: var(--ff-poppins); }
+html { 
+  font-family: var(--ff-poppins);
+  overflow-x: hidden;
+}
 
-body { background: var(--smoky-black); }
+body { 
+  background: var(--smoky-black);
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
 
 /*-----------------------------------*\
   #REUSED STYLE
@@ -647,6 +655,11 @@ main {
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 /**
@@ -954,12 +967,75 @@ main {
 \*-----------------------------------*/
 
 /**
+ * Mobile-first optimization (default - all phones)
+ */
+
+* {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+article {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+.article-title,
+.h2, .h3, .h4 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+p, span, li, a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.timeline-item-title {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.timeline-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  font-size: 14px;
+  text-align: justify;
+}
+
+/**
  * responsive larger than 450px screen
  */
 
 @media (min-width: 450px) {
 
   .project-img { height: auto; }
+
+  .timeline-item-title {
+    font-size: var(--fs-5);
+  }
+
+  .timeline-text {
+    font-size: var(--fs-6);
+  }
 
 }
 
@@ -1421,6 +1497,10 @@ main {
   line-height: 1.9;
   margin-bottom: 35px;
   text-align: justify;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .modal-section {
@@ -1596,15 +1676,28 @@ main {
 }
 
 @media (max-width: 450px) {
+  /* Container fixes */
+  .main-content {
+    margin: 10px;
+    padding: 0;
+  }
+
+  article {
+    padding: 12px;
+  }
+
+  /* Modal fixes */
   .modal-content {
-    padding: 25px 20px;
+    padding: 20px 15px;
+    margin: 10px;
+    max-width: calc(100vw - 20px);
   }
   
   .modal-close-btn {
     width: 36px;
     height: 36px;
-    top: 16px;
-    right: 16px;
+    top: 12px;
+    right: 12px;
   }
 
   .modal-close-btn ion-icon {
@@ -1612,12 +1705,116 @@ main {
   }
 
   .modal-title {
-    font-size: 22px;
+    font-size: 20px;
+    line-height: 1.3;
+    word-wrap: break-word;
+  }
+
+  .modal-description {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
   }
 
   .btn-primary {
-    padding: 14px 28px;
-    font-size: var(--fs-6);
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  /* Timeline mobile fixes */
+  .timeline-text {
+    font-size: 13px;
+    text-align: left;
+    word-break: break-word;
+    line-height: 1.6;
+  }
+
+  .timeline-item-title {
+    font-size: 15px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    margin-bottom: 8px;
+  }
+
+  .timeline-list {
+    padding-left: 25px;
+    margin-left: 0;
+  }
+
+  .timeline-item:not(:last-child) {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .timeline .title-wrapper {
+    margin-bottom: 20px;
+  }
+
+  /* Service item mobile optimization */
+  .service-item {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .service-item-title {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .service-item-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .service-learn-more {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  /* Project cards mobile */
+  .project-item > a {
+    padding: 10px;
+  }
+
+  .project-img {
+    height: 160px;
+  }
+
+  .project-icon {
+    font-size: 80px;
+  }
+
+  .project-title {
+    font-size: 15px;
+  }
+
+  .project-category {
+    font-size: 12px;
+  }
+
+  /* Tech list mobile */
+  .modal-tech-list li {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .modal-features-list li {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* Section titles */
+  .h2.article-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .h3 {
+    font-size: 18px;
+  }
+
+  .h4 {
+    font-size: 16px;
   }
 }
 
