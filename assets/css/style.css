@@ -732,7 +732,20 @@ main {
   100% { transform: scale(1); }
 }
 
-.project-item > a { width: 100%; }
+.project-item > a { 
+  width: 100%;
+  display: block;
+  background: var(--eerie-black-2);
+  padding: 15px;
+  border-radius: 20px;
+  transition: var(--transition-1);
+  opacity: 0.9;
+}
+
+.project-item > a:hover {
+  opacity: 1;
+  background: var(--onyx);
+}
 
 .project-img {
   position: relative;
@@ -741,10 +754,21 @@ main {
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
-  background: linear-gradient(135deg, var(--jet) 0%, var(--onyx) 100%);
+  background: var(--bg-gradient-onyx);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid var(--jet);
+  transition: var(--transition-1);
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.project-item > a:hover .project-img {
+  opacity: 1;
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.5);
 }
 
 .project-img::before {
@@ -759,25 +783,23 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.3); }
+.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.2); }
 
 .project-icon {
-  position: relative;
-  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
   color: var(--orange-yellow-crayola);
   z-index: 2;
   transition: var(--transition-1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project-icon ion-icon {
-  --ionicon-stroke-width: 32px;
+  opacity: 0.9;
 }
 
 .project-item > a:hover .project-icon {
-  transform: scale(1.15);
+  transform: translate(-50%, -50%) scale(1.15);
+  opacity: 1;
   color: var(--white-1);
 }
 
@@ -796,19 +818,6 @@ main {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
-}
-
-/* Project category-specific gradients */
-.project-item[data-category="security"] .project-img {
-  background: linear-gradient(135deg, #1a4d2e 0%, #0f2818 100%);
-}
-
-.project-item[data-category="tools"] .project-img {
-  background: linear-gradient(135deg, #4a1a4d 0%, #2a0f28 100%);
-}
-
-.project-item[data-category="applications"] .project-img {
-  background: linear-gradient(135deg, #1a3a4d 0%, #0f1f28 100%);
 }
 
 /*-----------------------------------*\
