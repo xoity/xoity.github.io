@@ -1915,6 +1915,7 @@ p, span, li, a {
   font-size: var(--fs-5);
   line-height: 1.9;
   text-align: justify;
+  margin-bottom: 30px;
 }
 
 .service-modal-list {
