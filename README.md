@@ -46,19 +46,24 @@ xoity.github.io/
 ## 🎨 Sections
 
 ### About
+
 Professional introduction highlighting my expertise in penetration testing, ethical hacking, and cybersecurity. Includes service offerings:
+
 - Penetration Testing
 - Vulnerability Assessment
 - Secure Development
 - Security Automation
 
 ### Resume
+
 - **Education**: Canadian University Dubai (CUD) - Cybersecurity
 - **Experience**: Penetration Testing, Security Research, Software Development
 - **Skills**: Penetration Testing, Python, Network Security, Web Security, Linux Administration, Java & TypeScript
 
 ### Projects
+
 Showcasing real projects from my GitHub repositories:
+
 - **HMvuln**: Vulnerable application for security training
 - **AuditAgent**: Security audit automation tool
 - **File Sorter**: Cross-platform file organization utility
@@ -69,7 +74,9 @@ Showcasing real projects from my GitHub repositories:
 - **Pocket Py**: Python utility collection
 
 ### Contact
+
 Direct links to:
+
 - GitHub Profile
 - LinkedIn Profile
 - Portfolio Statistics
@@ -84,16 +91,19 @@ Direct links to:
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/xoity/xoity.github.io.git
 ```
 
 2. Navigate to the project directory:
+
 ```bash
 cd xoity.github.io
 ```
 
 3. Open `index.html` in your browser or use a local server:
+
 ```bash
 # Using Python
 python -m http.server 8000
@@ -140,6 +150,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👤 Author
 
 **Mohammad Abu-Khader**
+
 - GitHub: [@xoity](https://github.com/xoity)
 - LinkedIn: [Mohammad Abu-Khader](https://www.linkedin.com/in/mohammad-abu-khader-9248011ab)
 - Location: Dubai, UAE
