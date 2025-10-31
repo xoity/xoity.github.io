@@ -739,12 +739,32 @@ main {
   padding: 15px;
   border-radius: 20px;
   transition: var(--transition-1);
-  opacity: 0.9;
+  border: 1px solid var(--jet);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-item > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--orange-yellow-crayola);
+  transition: width 0.4s ease;
+  z-index: 10;
+}
+
+.project-item > a:hover::before {
+  width: 100%;
 }
 
 .project-item > a:hover {
-  opacity: 1;
   background: var(--onyx);
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.4);
 }
 
 .project-img {
@@ -760,15 +780,12 @@ main {
   justify-content: center;
   border: 2px solid var(--jet);
   transition: var(--transition-1);
-  opacity: 0.85;
   cursor: pointer;
 }
 
 .project-item > a:hover .project-img {
-  opacity: 1;
   border-color: var(--orange-yellow-crayola);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.5);
+  box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.3);
 }
 
 .project-img::before {
@@ -794,13 +811,12 @@ main {
   color: var(--orange-yellow-crayola);
   z-index: 2;
   transition: var(--transition-1);
-  opacity: 0.9;
 }
 
 .project-item > a:hover .project-icon {
   transform: translate(-50%, -50%) scale(1.15);
-  opacity: 1;
   color: var(--white-1);
+  filter: drop-shadow(0 0 20px var(--orange-yellow-crayola));
 }
 
 .project-title,
