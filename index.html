@@ -673,7 +673,7 @@
           <ul class="project-list">
 
             <li class="project-item active" data-filter-item data-category="security">
-              <a href="https://github.com/KalvadTech/infraninja" target="_blank">
+              <a href="#" class="project-link" data-project-id="infraninja" data-github-url="https://github.com/KalvadTech/infraninja">
 
                 <figure class="project-img">
                   <div class="project-icon">
@@ -689,7 +689,7 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="security">
-              <a href="https://github.com/xoity/HMvuln" target="_blank">
+              <a href="#" class="project-link" data-project-id="hmvuln" data-github-url="https://github.com/xoity/HMvuln">
 
                 <figure class="project-img">
                   <div class="project-icon">
@@ -705,7 +705,7 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="security">
-              <a href="https://github.com/xoity/AuditAgent" target="_blank">
+              <a href="#" class="project-link" data-project-id="auditagent" data-github-url="https://github.com/xoity/AuditAgent">
 
                 <figure class="project-img">
                   <div class="project-icon">
@@ -721,7 +721,7 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="tools">
-              <a href="https://github.com/xoity/File-Sorter" target="_blank">
+              <a href="#" class="project-link" data-project-id="filesorter" data-github-url="https://github.com/xoity/File-Sorter">
 
                 <figure class="project-img">
                   <div class="project-icon">
@@ -737,7 +737,7 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="tools">
-              <a href="https://github.com/xoity/windows-privacy" target="_blank">
+              <a href="#" class="project-link" data-project-id="windowsprivacy" data-github-url="https://github.com/xoity/windows-privacy">
 
                 <figure class="project-img">
                   <div class="project-icon">
@@ -753,7 +753,7 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="applications">
-              <a href="https://github.com/xoity/schedule-finder" target="_blank">
+              <a href="#" class="project-link" data-project-id="schedulefinder" data-github-url="https://github.com/xoity/schedule-finder">
 
                 <figure class="project-img">
                   <div class="project-icon">
@@ -769,7 +769,7 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="applications">
-              <a href="https://github.com/xoity/medicinedb" target="_blank">
+              <a href="#" class="project-link" data-project-id="medicinedb" data-github-url="https://github.com/xoity/medicinedb">
 
                 <figure class="project-img">
                   <div class="project-icon">
@@ -785,7 +785,7 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="applications">
-              <a href="https://github.com/xoity/ftp-rebuilt" target="_blank">
+              <a href="#" class="project-link" data-project-id="ftprebuilt" data-github-url="https://github.com/xoity/ftp-rebuilt">
 
                 <figure class="project-img">
                   <div class="project-icon">
@@ -801,7 +801,7 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="applications">
-              <a href="https://github.com/xoity/pocket-py" target="_blank">
+              <a href="#" class="project-link" data-project-id="pocketpy" data-github-url="https://github.com/xoity/pocket-py">
 
                 <figure class="project-img">
                   <div class="project-icon">
@@ -881,7 +881,56 @@
 
   </main>
 
+  <!--
+    - #PROJECT MODAL
+  -->
 
+  <div class="project-modal" data-modal-container>
+    <div class="modal-overlay" data-modal-overlay></div>
+    
+    <div class="modal-content" data-modal>
+      <button class="modal-close-btn" data-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-icon" data-modal-icon>
+          <ion-icon name="code-outline"></ion-icon>
+        </div>
+        <h2 class="modal-title" data-modal-title>Project Title</h2>
+        <span class="modal-category" data-modal-category>Category</span>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-description" data-modal-description></p>
+        
+        <div class="modal-section">
+          <h3>Technologies Used</h3>
+          <ul class="modal-tech-list" data-modal-tech></ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>Key Features</h3>
+          <ul class="modal-features-list" data-modal-features></ul>
+        </div>
+
+        <div class="modal-section modal-media-placeholder">
+          <h3>Project Demo</h3>
+          <div class="media-placeholder">
+            <ion-icon name="film-outline"></ion-icon>
+            <p>Video/GIF demo coming soon</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="#" class="btn btn-primary" target="_blank" data-github-link>
+          <ion-icon name="logo-github"></ion-icon>
+          <span>View on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
 
 
