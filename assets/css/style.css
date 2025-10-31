@@ -1523,23 +1523,14 @@ main {
   font-size: 22px;
 }
 
-/* Custom scrollbar for modal */
+/* Hide scrollbar for modal while keeping scroll functionality */
+.modal-content {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
 .modal-content::-webkit-scrollbar {
-  width: 10px;
-}
-
-.modal-content::-webkit-scrollbar-track {
-  background: var(--jet);
-  border-radius: 10px;
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-  background: var(--orange-yellow-crayola);
-  border-radius: 10px;
-}
-
-.modal-content::-webkit-scrollbar-thumb:hover {
-  background: var(--vegas-gold);
+  display: none; /* Chrome, Safari, Opera */
 }
 
 /* Responsive */
