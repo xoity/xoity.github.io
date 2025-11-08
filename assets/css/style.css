@@ -1266,6 +1266,28 @@ p, span, li, a {
     gap: 20px 25px;
   }
 
+  .service-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 18px;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .service-icon-box {
+    margin-bottom: 0;
+    margin-top: 5px;
+  }
+
+  .service-content-box { 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .project-list { grid-template-columns: repeat(3, 1fr); }
 
 }
