@@ -640,7 +640,7 @@ main {
 
 .timeline-list {
   font-size: var(--fs-6);
-  margin-left: 45px;
+  margin-left: 65px;
 }
 
 .timeline-item { position: relative; }
@@ -663,7 +663,7 @@ main {
   content: "";
   position: absolute;
   top: -25px;
-  left: -30px;
+  left: -40px;
   width: 1px;
   height: calc(100% + 50px);
   background: var(--jet);
@@ -673,7 +673,7 @@ main {
   content: "";
   position: absolute;
   top: 5px;
-  left: -33px;
+  left: -43px;
   height: 6px;
   width: 6px;
   background: var(--text-gradient-yellow);
@@ -1804,8 +1804,16 @@ p, span, li, a {
   }
 
   .timeline-list {
-    padding-left: 25px;
-    margin-left: 0;
+    padding-left: 0;
+    margin-left: 45px;
+  }
+
+  .timeline-item:not(:last-child)::before {
+    left: -30px;
+  }
+
+  .timeline-item::after {
+    left: -33px;
   }
 
   .timeline-item:not(:last-child) {
