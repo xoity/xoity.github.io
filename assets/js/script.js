@@ -98,7 +98,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 // Project data with detailed information
 const projectsData = {
   'infraninja': {
-    title: 'InfraNinja',
+    title: 'InfraNinja ⭐',
     category: 'Security',
     icon: 'cloud-outline',
     description: 'InfraNinja is a powerful Python-based infrastructure automation toolkit built on PyInfra that simplifies deployment and security hardening across Linux distributions. It helps DevSecOps teams automate secure infrastructure setup with pre-configured modules for common services, enabling rapid deployment while maintaining security best practices.',
@@ -114,6 +114,7 @@ const projectsData = {
       'Modular architecture for easy customization and extension'
     ]
   },
+
   'hmvuln': {
     title: 'HMvuln',
     category: 'Security',
@@ -131,8 +132,9 @@ const projectsData = {
       'Custom vulnerability checks and plugin support'
     ]
   },
-  'auditagent': {
-    title: 'AuditAgent',
+
+    'auditagent': {
+    title: 'AuditAgent ⭐',
     category: 'Security',
     icon: 'shield-checkmark-outline',
     description: 'AuditAgent is an intelligent security auditing assistant that leverages AI to analyze system logs, security configurations, and compliance requirements. It provides automated security assessments, identifies misconfigurations, and generates comprehensive audit reports for compliance frameworks like PCI-DSS, HIPAA, and ISO 27001.',
@@ -148,6 +150,7 @@ const projectsData = {
       'Historical trend analysis and security posture tracking'
     ]
   },
+
   'filesorter': {
     title: 'File Sorter',
     category: 'Tools',
