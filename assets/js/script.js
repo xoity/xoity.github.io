@@ -477,6 +477,7 @@ serviceModalOverlay.addEventListener('click', closeServiceModal);
 
 // Close service modal on ESC key
 document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && serviceModalContainer.classList.contains('active')) {
     closeServiceModal();
   }
