@@ -432,7 +432,10 @@ const serviceLearnMoreBtns = document.querySelectorAll('.service-learn-more');
 // Function to open service modal
 function openServiceModal(serviceId) {
   const service = servicesData[serviceId];
-  if (!service) return;
+  if (!service) {
+    console.error('Service not found:', serviceId);
+    return;
+  }
 
   // Update modal content
   document.querySelector('[data-service-modal-title]').textContent = service.title;
@@ -476,7 +479,6 @@ serviceModalCloseBtn.addEventListener('click', closeServiceModal);
 serviceModalOverlay.addEventListener('click', closeServiceModal);
 
 // Close service modal on ESC key
-document.addEventListener('keydown', function(e) {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && serviceModalContainer.classList.contains('active')) {
     closeServiceModal();
