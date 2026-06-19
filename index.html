@@ -724,12 +724,12 @@ body.cursor-hover #cursor-ring { width:42px; height:42px; border-color:rgba(0,21
   border-radius: 50%;
 }
 .skills-sphere {
-  width: min(520px, 100%); height: 520px;
+  width: min(720px, 100%); height: 640px;
   position: relative;
   margin: 0 auto;
   cursor: grab;
   user-select: none;
-  overflow: hidden;
+  overflow: visible;
 }
 .skills-sphere:active { cursor: grabbing; }
 .skill-tag {
@@ -1399,7 +1399,7 @@ body.cursor-hover #cursor-ring { width:42px; height:42px; border-color:rgba(0,21
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-photo-card { margin: 0 auto; width: 280px; height: 340px; }
   .contact-card { padding: 40px; }
-  .skills-sphere { width: min(440px, 100%); height: 440px; }
+  .skills-sphere { width: min(560px, 100%); height: 520px; }
 }
 
 @media (max-width:768px) {
@@ -1428,7 +1428,8 @@ body.cursor-hover #cursor-ring { width:42px; height:42px; border-color:rgba(0,21
   .credly-row { grid-template-columns: 1fr; }
   .contact-inner { grid-template-columns: 1fr; gap:2rem; }
   .contact-card { padding: 28px 20px; }
-  .skills-sphere { width:min(320px, 100%); height:320px; }
+  .skills-sphere { width:min(390px, 100%); height:300px; }
+  .skill-tag { font-size: 9px; padding: 3px 8px; }
   .footer { flex-direction:column; text-align:center; }
 }
 
@@ -1436,6 +1437,8 @@ body.cursor-hover #cursor-ring { width:42px; height:42px; border-color:rgba(0,21
   .stat-item { padding: 0 16px; }
   .hero-title { font-size: 2.2rem; }
   .about-photo-card { width: 240px; height: 290px; }
+  .skills-sphere { width:min(330px, 100%); height:275px; }
+  .skill-detail-popover { width: min(286px, calc(100vw - 52px)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1754,7 +1757,7 @@ body.cursor-hover #cursor-ring { width:42px; height:42px; border-color:rgba(0,21
 
 <!-- ─── FOOTER ────────────────────────── -->
 <footer class="footer">
-  <p class="footer-copy">© 2026 Mohammad Abu-Khader. Built with care in Dubai.</p>
+  <p class="footer-copy">© 2026 Mohammad Abu-Khader. Built with ♥️ on Arch.</p>
   <div class="footer-links">
     <a href="https://github.com/xoity" target="_blank" rel="noopener" aria-label="GitHub">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -2112,9 +2115,10 @@ if(aboutCard){
   ];
 
   const N = skills.length;
-  const R = container.offsetWidth/2 - 20 || 240;
+  const isSmallSphere = container.offsetWidth < 420;
   const cx = container.offsetWidth/2  || 260;
   const cy = container.offsetHeight/2 || 260;
+  const R = Math.max(96, Math.min(container.offsetWidth, container.offsetHeight) * (isSmallSphere ? 0.42 : 0.34));
 
   // Fibonacci sphere
   const pts = skills.map((_,i)=>{
@@ -2186,7 +2190,7 @@ if(aboutCard){
     }
     tags.forEach((tag,i)=>{
       const p = rotP(pts[i],aX,aY);
-      const scale   = (p.z+R)/(2*R)*0.85+0.55;
+      const scale   = (p.z+R)/(2*R)*(isSmallSphere ? 0.32 : 0.48)+(isSmallSphere ? 0.34 : 0.46);
       const opacity = (p.z+R)/(2*R)*0.75+0.25;
       const tx = cx + p.x - tag.offsetWidth/2;
       const ty = cy + p.y - tag.offsetHeight/2;
