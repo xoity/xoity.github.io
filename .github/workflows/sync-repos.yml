@@ -20,7 +20,7 @@ jobs:
           USERNAME: xoity
         run: |
           echo "Fetching repos for $USERNAME..."
-          REPOS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+          USER_REPOS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
             "https://api.github.com/users/$USERNAME/repos?sort=updated&per_page=100" \
             | jq '[.[] | select(.fork == false) | {
               name: .name,
@@ -32,6 +32,29 @@ jobs:
               html_url: .html_url,
               homepage: (.homepage // "")
             }]')
+
+          INFRA_NINJA=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/KalvadTech/infraninja" \
+            | jq '[{
+              name: .name,
+              description: (.description // "No description provided."),
+              language: (.language // "Code"),
+              topics: (.topics // []),
+              stargazers_count: .stargazers_count,
+              updated_at: .updated_at,
+              html_url: .html_url,
+              homepage: (.homepage // "")
+            }]')
+
+          REPOS=$(jq -s '
+            add
+            | unique_by(.html_url)
+            | map(select(.name != env.USERNAME and .name != "xoity.github.io" and .name != "Projects"))
+            | sort_by([
+                -(.stargazers_count // 0),
+                -((.updated_at // "1970-01-01T00:00:00Z") | fromdateiso8601)
+              ])
+          ' <(echo "$USER_REPOS") <(echo "$INFRA_NINJA"))
 
           echo "$REPOS" > repos-data.json
           echo "Fetched $(echo "$REPOS" | jq length) repositories"

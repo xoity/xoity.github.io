@@ -2244,6 +2244,24 @@ const LANG_COLORS = {
   C:'#a8b9cc', 'C++':'#f34b7d', Shell:'#89e051', HTML:'#e34c26', default:'#64748b'
 };
 
+function sortProjects(projects){
+  return projects.sort((a,b)=>{
+    const stars = (b.stargazers_count || 0) - (a.stargazers_count || 0);
+    if(stars !== 0) return stars;
+    return new Date(b.updated_at || 0) - new Date(a.updated_at || 0);
+  });
+}
+
+function dedupeProjects(projects){
+  const seen = new Set();
+  return projects.filter(repo=>{
+    const key = (repo.html_url || `${repo.owner?.login || ''}/${repo.name}`).toLowerCase();
+    if(seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function categorizeRepo(r){
   const t=(r.topics||[]).join(' ').toLowerCase();
   const n=r.name.toLowerCase();
@@ -2402,17 +2420,21 @@ function renderFallbackProjects(){
     {name:'ftp-rebuilt',description:'Secure FTP server rebuild with FTPS support, auth, quotas, logging, and administration workflows.',language:'Python',topics:['security','devops'],stargazers_count:0,updated_at:'2024-12-01',html_url:'https://github.com/xoity/ftp-rebuilt'},
     {name:'pocket-py',description:'Lightweight Python code executor and learning platform with snippets, history, and offline-friendly workflows.',language:'Python',topics:['tools','education'],stargazers_count:0,updated_at:'2024-11-01',html_url:'https://github.com/xoity/pocket-py'},
   ];
-  renderProjectCards(fallback);
+  renderProjectCards(sortProjects(fallback));
 }
 
 async function fetchGitHubProjects(){
   showSkeletonCards();
   try{
-    const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`);
-    if(!res.ok) throw new Error('API error');
-    const data = await res.json();
+    const [userRes, infraRes] = await Promise.all([
+      fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`),
+      fetch('https://api.github.com/repos/KalvadTech/infraninja')
+    ]);
+    if(!userRes.ok) throw new Error('API error');
+    const data = await userRes.json();
     if(!Array.isArray(data)) throw new Error('Bad data');
-    const projects = data.filter(r=>!r.fork && r.name !== GITHUB_USERNAME && r.name !== 'xoity.github.io' && r.name !== 'Projects').sort((a,b)=>new Date(b.updated_at)-new Date(a.updated_at));
+    const externalProjects = infraRes.ok ? [await infraRes.json()] : [];
+    const projects = sortProjects(dedupeProjects([...data, ...externalProjects]).filter(r=>!r.fork && r.name !== GITHUB_USERNAME && r.name !== 'xoity.github.io' && r.name !== 'Projects'));
     renderProjectCards(projects);
   } catch(e){
     console.warn('GitHub API failed, using fallback projects:', e.message);

@@ -1,5 +1,46 @@
 [
   {
+    "name": "infraninja",
+    "description": "InfraNinja is a Python-based infrastructure automation toolkit built on PyInfra. It provides deployment modules for security hardening, server configuration, and infrastructure management across different Linux distributions.",
+    "language": "Python",
+    "topics": [
+      "infrastructure",
+      "python",
+      "security"
+    ],
+    "stargazers_count": 14,
+    "updated_at": "2026-06-16T07:31:50Z",
+    "html_url": "https://github.com/KalvadTech/infraninja",
+    "homepage": ""
+  },
+  {
+    "name": "AuditAgent",
+    "description": "Automate firewall policy auditing and enforcement with this AI-driven Python compliance tool.",
+    "language": "Python",
+    "topics": [
+      "ai-agents",
+      "automation",
+      "collaborate",
+      "github-copilot",
+      "python",
+      "security"
+    ],
+    "stargazers_count": 3,
+    "updated_at": "2026-02-12T12:00:32Z",
+    "html_url": "https://github.com/xoity/AuditAgent",
+    "homepage": ""
+  },
+  {
+    "name": "windows-privacy",
+    "description": "No description provided.",
+    "language": "PowerShell",
+    "topics": [],
+    "stargazers_count": 1,
+    "updated_at": "2026-03-27T13:47:45Z",
+    "html_url": "https://github.com/xoity/windows-privacy",
+    "homepage": ""
+  },
+  {
     "name": "huffmancoding-visualizer",
     "description": "No description provided.",
     "language": "HTML",
@@ -30,16 +71,6 @@
     "homepage": ""
   },
   {
-    "name": "xoity",
-    "description": "WHOAMI",
-    "language": "Code",
-    "topics": [],
-    "stargazers_count": 0,
-    "updated_at": "2026-04-18T06:36:26Z",
-    "html_url": "https://github.com/xoity/xoity",
-    "homepage": ""
-  },
-  {
     "name": "File-Sorter",
     "description": "File sorter for windows, macOS, and linux",
     "language": "Python",
@@ -52,33 +83,6 @@
     "stargazers_count": 0,
     "updated_at": "2026-03-27T13:47:47Z",
     "html_url": "https://github.com/xoity/File-Sorter",
-    "homepage": ""
-  },
-  {
-    "name": "windows-privacy",
-    "description": "No description provided.",
-    "language": "PowerShell",
-    "topics": [],
-    "stargazers_count": 1,
-    "updated_at": "2026-03-27T13:47:45Z",
-    "html_url": "https://github.com/xoity/windows-privacy",
-    "homepage": ""
-  },
-  {
-    "name": "AuditAgent",
-    "description": "Automate firewall policy auditing and enforcement with this AI-driven Python compliance tool.",
-    "language": "Python",
-    "topics": [
-      "ai-agents",
-      "automation",
-      "collaborate",
-      "github-copilot",
-      "python",
-      "security"
-    ],
-    "stargazers_count": 3,
-    "updated_at": "2026-02-12T12:00:32Z",
-    "html_url": "https://github.com/xoity/AuditAgent",
     "homepage": ""
   },
   {
@@ -99,16 +103,6 @@
     "stargazers_count": 0,
     "updated_at": "2025-11-28T08:21:10Z",
     "html_url": "https://github.com/xoity/AuditAgent-UI",
-    "homepage": ""
-  },
-  {
-    "name": "xoity.github.io",
-    "description": "No description provided.",
-    "language": "CSS",
-    "topics": [],
-    "stargazers_count": 0,
-    "updated_at": "2025-11-12T08:25:57Z",
-    "html_url": "https://github.com/xoity/xoity.github.io",
     "homepage": ""
   },
   {
@@ -219,16 +213,6 @@
     "stargazers_count": 0,
     "updated_at": "2024-12-24T18:01:01Z",
     "html_url": "https://github.com/xoity/inventory-managment-system",
-    "homepage": ""
-  },
-  {
-    "name": "Projects",
-    "description": "No description provided.",
-    "language": "Python",
-    "topics": [],
-    "stargazers_count": 0,
-    "updated_at": "2024-12-01T11:42:28Z",
-    "html_url": "https://github.com/xoity/Projects",
     "homepage": ""
   }
 ]
