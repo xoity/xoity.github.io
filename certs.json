@@ -1,0 +1,54 @@
+{
+  "badges": [],
+  "certifications": [
+    {
+      "name": "Certified in Cybersecurity (CC)",
+      "issuer": "ISC2",
+      "image": "",
+      "verify": "",
+      "category": "cybersecurity"
+    },
+    {
+      "name": "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+      "issuer": "Oracle",
+      "image": "",
+      "verify": "",
+      "category": "cloud"
+    },
+    {
+      "name": "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+      "issuer": "Oracle",
+      "image": "",
+      "verify": "",
+      "category": "cloud"
+    },
+    {
+      "name": "Oracle Data Platform 2025 Certified Foundations Associate",
+      "issuer": "Oracle",
+      "image": "",
+      "verify": "",
+      "category": "data"
+    },
+    {
+      "name": "Ethical Hacker",
+      "issuer": "Cisco",
+      "image": "",
+      "verify": "",
+      "category": "cybersecurity"
+    },
+    {
+      "name": "GitHub Foundations",
+      "issuer": "GitHub",
+      "image": "",
+      "verify": "",
+      "category": "devops"
+    },
+    {
+      "name": "Cybersecurity Professional Certificate",
+      "issuer": "Google",
+      "image": "",
+      "verify": "",
+      "category": "cybersecurity"
+    }
+  ]
+}
