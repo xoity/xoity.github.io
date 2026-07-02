@@ -5,49 +5,56 @@
       "name": "Certified in Cybersecurity (CC)",
       "issuer": "ISC2",
       "image": "",
-      "verify": "",
+      "verify": "https://www.credly.com/badges/0a0ebfda-1fdf-4503-a249-907a0ee15393",
       "category": "cybersecurity"
     },
     {
       "name": "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
       "issuer": "Oracle",
       "image": "",
-      "verify": "",
+      "verify": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=490EB795075972632E5AFC42E9B8809C527FEB4028ED425A78E4FA8C721799AB",
       "category": "cloud"
     },
     {
       "name": "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
       "issuer": "Oracle",
       "image": "",
-      "verify": "",
+      "verify": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=0A4E43B531CE951B25EFF956B3F1AC32DE2C985FEAC85D80ADDA1EA814D8DA52",
       "category": "cloud"
     },
     {
       "name": "Oracle Data Platform 2025 Certified Foundations Associate",
       "issuer": "Oracle",
       "image": "",
-      "verify": "",
+      "verify": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=909F99BFF7205276566AB35E4ED4536687D73EDC0FB40BFB487A9E74ED953521",
       "category": "data"
     },
     {
       "name": "Ethical Hacker",
       "issuer": "Cisco",
       "image": "",
-      "verify": "",
+      "verify": "https://www.credly.com/badges/a0892cd5-7177-445b-ace7-f29c4e4afeb9/public_url",
       "category": "cybersecurity"
     },
     {
       "name": "GitHub Foundations",
       "issuer": "GitHub",
       "image": "",
-      "verify": "",
+      "verify": "https://www.credly.com/badges/fae43524-4fc1-40b1-b37e-c5fe81233aea/print",
       "category": "devops"
+    },
+    {
+      "name": "AWS CloudOps Engineer - Associate",
+      "issuer": "AWS",
+      "image": "",
+      "verify": "https://www.credly.com/badges/3440c415-6315-4857-82c4-d9c35249db36/public_url",
+      "category": "cloud"
     },
     {
       "name": "Cybersecurity Professional Certificate",
       "issuer": "Google",
       "image": "",
-      "verify": "",
+      "verify": "https://www.coursera.org/account/accomplishments/professional-cert/GO9E1NHI5C48",
       "category": "cybersecurity"
     }
   ]
