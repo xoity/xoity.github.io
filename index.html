@@ -2297,6 +2297,12 @@ function categorizeRepo(r){
   return cats;
 }
 
+function githubOpenGraphImage(repo){
+  const match = (repo.html_url || '').match(/^https:\/\/github\.com\/([^/]+)\/([^/#?]+)/i);
+  if(!match) return '';
+  return `https://opengraph.githubassets.com/xoity-portfolio/${match[1]}/${match[2]}`;
+}
+
 function showSkeletonCards(){
   const g=document.getElementById('projects-grid');
   g.innerHTML = Array(6).fill('<div class="skeleton"></div>').join('');
@@ -2340,7 +2346,8 @@ function renderProjectCards(projects){
     const lc   = LANG_COLORS[lang] || LANG_COLORS.default;
     const topics = (repo.topics||[]).slice(0,4);
     const date = new Date(repo.updated_at).toLocaleDateString('en-US',{month:'short',year:'numeric'});
-    const img  = SCREENSHOTS[repo.name] || SCREENSHOTS[repo.name.replace(/-/g,'')] || SCREENSHOTS[repo.name.replace(/_/g,'')];
+    const fallbackImg = SCREENSHOTS[repo.name] || SCREENSHOTS[repo.name.replace(/-/g,'')] || SCREENSHOTS[repo.name.replace(/_/g,'')];
+    const img  = githubOpenGraphImage(repo) || fallbackImg;
 
     const card = document.createElement('div');
     card.className = 'project-card';
@@ -2361,9 +2368,13 @@ function renderProjectCards(projects){
     const previewGrad = accentColors[primaryCat] || accentColors['Tools'];
     const previewIcon = {Security:'🛡️','AI/ML':'🤖',Mobile:'📱',DevOps:'⚙️',Hardware:'🔧',Tools:'🛠️',Web:'🌐'}[primaryCat]||'💻';
 
+    const imageError = fallbackImg
+      ? `this.onerror=null;this.src='${fallbackImg}'`
+      : `this.parentElement.outerHTML='<div class=\'proj-preview\' style=\'background:${previewGrad}\'><span>${previewIcon}</span></div>'`;
+
     card.innerHTML = `
       <div class="project-accent-bar accent-${CSS.escape(primaryCat)}"></div>
-      ${img?`<div class="proj-img"><img src="${img}" alt="${repo.name}" loading="lazy" onerror="this.parentElement.outerHTML='<div class=\\'proj-preview\\' style=\\'background:${previewGrad}\\'><span>${previewIcon}</span></div>'"></div>`
+      ${img?`<div class="proj-img"><img src="${img}" alt="${repo.name}" loading="lazy" onerror="${imageError}"></div>`
       :`<div class="proj-preview" style="background:${previewGrad}"><span>${previewIcon}</span></div>`}
       <div class="proj-body">
         <div class="proj-meta">
