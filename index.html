@@ -845,6 +845,106 @@ body.cursor-hover #cursor-ring { width:42px; height:42px; border-color:rgba(0,21
   grid-template-columns: repeat(auto-fill, minmax(310px,1fr));
   gap: 24px;
 }
+.featured-app {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 2.5rem;
+  align-items: center;
+  margin: 0 auto 3rem;
+  max-width: 1060px;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 136, 0.05));
+  border: 1px solid rgba(0, 212, 255, 0.28);
+  border-radius: 12px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+}
+.featured-app-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.65rem;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.featured-app-kicker::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.85);
+}
+.featured-app h3 {
+  color: var(--text);
+  font-size: 1.35rem;
+  margin-bottom: 0.55rem;
+}
+.featured-app p {
+  max-width: 620px;
+  color: var(--light-gray);
+  font-size: 0.95rem;
+}
+.featured-app-actions {
+  display: flex;
+  margin-top: 1.4rem;
+}
+.featured-app-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-width: 158px;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--cyan);
+  border-radius: 6px;
+  color: var(--bg);
+  background: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.featured-app-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.28);
+}
+.featured-app-preview {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1px solid rgba(226, 232, 240, 0.2);
+  border-radius: 6px;
+  background: var(--bg);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+}
+.featured-app-preview::after {
+  content: 'Live preview';
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  color: var(--text);
+  background: rgba(2, 4, 8, 0.78);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.featured-app-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.35s ease;
+}
+.featured-app-preview:hover img { transform: scale(1.03); }
 .project-card {
   background: var(--surface);
   border: 1px solid var(--border-dim);
@@ -1420,6 +1520,8 @@ body.cursor-hover #cursor-ring { width:42px; height:42px; border-color:rgba(0,21
   .mobile-toggle { display:flex; }
   .section { padding: 60px 5%; }
   .section-num, .section-ttl { font-size: 1.8rem; }
+  .featured-app { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.5rem; }
+  .featured-app-actions, .featured-app-link { width: 100%; }
   .stats-bar { gap:0; }
   .stat-item { padding: 0 28px; }
   .stat-number { font-size: 2.4rem; }
@@ -1600,6 +1702,21 @@ body.cursor-hover #cursor-ring { width:42px; height:42px; border-color:rgba(0,21
     <div class="section-num">03.</div>
     <div class="section-ttl">Projects</div>
     <div class="section-line"></div>
+  </div>
+  <div class="featured-app reveal">
+    <div>
+      <div class="featured-app-kicker">Featured live app</div>
+      <h3>Assmbl</h3>
+      <p>An AI-powered wardrobe assistant that helps turn your closet into practical outfit ideas for everyday occasions.</p>
+      <div class="featured-app-actions">
+        <a class="featured-app-link" href="https://assmbl.abukhader.cloud" target="_blank" rel="noopener noreferrer">
+          Open Assmbl <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <a class="featured-app-preview" href="https://assmbl.abukhader.cloud" target="_blank" rel="noopener noreferrer" aria-label="Open the Assmbl website">
+      <img src="assets/images/assmbl-preview.jpg" alt="Assmbl website landing page preview" loading="lazy">
+    </a>
   </div>
   <div class="filter-bar reveal" id="filterBar">
     <button class="filter-btn active" data-filter="all">All</button>
